@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Hero from "./pages/Hero"; // 👈 Landing page
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
-import Login from "./pages/Login";
+
 
 import { AuthProvider } from "./context/AuthContext";
 import useAuth from "./hooks/useAuth";
