@@ -3,9 +3,7 @@ import Navbar from "../components/Navbar";
 import "./home.css";
 import jsPDF from "jspdf";
 
-const YT_API_KEY = "AIzaSyCp3602etOBzx84D7kK-MuYW2JPZ_d5YV0";
-
-/* 🔥 Trending Netflix-style posters (REAL MOVIES) */
+const YT_API_KEY = "AIzaSyCp3602etOBzx84D7kK-MuYW2JPZ_d5YV0";/* 🔥 Trending Netflix-style posters (REAL MOVIES) */
 const trending = [
   {
     id: 1,
