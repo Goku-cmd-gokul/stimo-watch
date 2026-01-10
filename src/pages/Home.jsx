@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import "./home.css";
+import "../styles/home.css";
 import jsPDF from "jspdf";
 
 const YT_API_KEY = "AIzaSyCp3602etOBzx84D7kK-MuYW2JPZ_d5YV0";/* 🔥 Trending Netflix-style posters (REAL MOVIES) */
