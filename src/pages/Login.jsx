@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Signup.css";
+import "../styles/Login.css";
 
-export default function Signup() {
+export default function Login() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
   });
 
   const [error, setError] = useState("");
 
+  /* Handle input change */
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,16 +20,18 @@ export default function Signup() {
     });
   };
 
+  /* Email validation */
   const validateEmail = (email) => {
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     return regex.test(email);
   };
 
+  /* Submit */
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, email, password } = formData;
+    const { email, password } = formData;
 
-    if (!name || !email || !password) {
+    if (!email || !password) {
       setError("All fields are required!");
       return;
     }
@@ -44,32 +46,26 @@ export default function Signup() {
       return;
     }
 
-    console.log("Signup Data:", formData);
+    console.log("Login Data:", formData);
 
     setError("");
-    setFormData({ name: "", email: "", password: "" });
+    setFormData({ email: "", password: "" });
 
-    navigate("/login");
+    // ✅ Redirect to Home after login
+    navigate("/home");
   };
 
   return (
-    <div className="signup-page">
-      <div className="signup-overlay"></div>
+    <div className="login-page">
+      <div className="login-overlay"></div>
 
-      <div className="signup-wrapper">
-        <div className="signup-card">
-          <h2>Create Account</h2>
+      <div className="login-wrapper">
+        <div className="login-card">
+          <h2>Sign In</h2>
+
           {error && <p className="error">{error}</p>}
 
-          <form className="signup-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-            />
-
+          <form className="login-form" onSubmit={handleSubmit}>
             <input
               type="email"
               name="email"
@@ -83,18 +79,18 @@ export default function Signup() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              placeholder="Enter your password (min 6 chars)"
+              placeholder="Enter your password"
             />
 
-            <button type="submit" className="signup-submit-btn">
-              Sign Up
+            <button type="submit" className="login-submit-btn">
+              Sign In
             </button>
           </form>
 
-          <p className="login-link">
-            Already have an account?{" "}
-            <span onClick={() => navigate("/login")}>
-              Sign In
+          <p className="signup-link">
+            Don’t have an account?{" "}
+            <span onClick={() => navigate("/signup")}>
+              Create Account
             </span>
           </p>
         </div>
