@@ -10,7 +10,7 @@ const Hero = () => {
       {/* Navbar */}
       <nav className="hero-navbar">
         <div className="logo" onClick={() => navigate("/")}>
-          PLAYCINE
+          Streamio
         </div>
 
         <div className="nav-actions">
@@ -18,7 +18,7 @@ const Hero = () => {
             Sign in
           </button>
           <button className="join-btn" onClick={() => navigate("/signup")}>
-            Join PlayCine
+            Join Streamio
           </button>
         </div>
       </nav>
@@ -32,13 +32,13 @@ const Hero = () => {
         </h1>
 
         <p>
-          Welcome to PLAYCINE, where the silver screen comes alive,
+          Welcome to Streamio, where the silver screen comes alive,
           offering a captivating web app experience that fuels your
           love for movies.
         </p>
 
         <button className="discover-btn" onClick={() => navigate("/home")}>
-          Discover PLAYCINE
+          Discover Streamio
         </button>
       </div>
 
